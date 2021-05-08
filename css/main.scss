@@ -143,53 +143,215 @@
 	background: $border;
 	box-shadow: 120px 0 0 $border, 60px 0 0 $border;
 	div:nth-child(2) {
-	  left: 60px;
+	/*   left: 60px; */
 	}
 	div:nth-child(3) {
-	  left: 120px;
+	  left: 0px;
 	}
   }
   
-  .cup {
-	/* top: 20px;
-	width: 27px;
-	height: 35px;
-	background: #EF767A;
-	border-radius: 5px;
+
+  .oven {
+	width: 150px;
+	height: 170px;
+	background: $oven;
+	top: 130px;
 	@include border(3px);
-	transform: rotate(30deg);
-	box-shadow: inset -5px 0 0 rgba(#000, 0.1);
-	&:before {
+  }
+  
+  .switch {
+	width: 150px;
+	height: 30px;
+	background: #B5BFC4;
+	border-bottom: 3px solid $border;
+	&:before,
+	&:after {
 	  position: absolute;
 	  content: '';
-	  top: 4px;
-	  left: -15px;
-	  width: 12px;
+	}
+	&:before {
+	  top: 7px;
+	  left: 10px;
+	  width: 15px;
 	  height: 15px;
-	  @include border(3px);
-	  border-radius: 4px;
-	  border-right: none;
-	} */
+	  background: #6B7F89;
+	  border-radius: 100%;
+	  box-shadow: 60px 0 0 #6B7F89, 30px 0 0 #6B7F89
+	}
   }
-  /**************/
-  #action {
+  
+  .mid {
+	left: 15px;
+	width: 120px;
+	height: 70px;
+	background: #A7D0E5;
+	top: 60px;
+	&:before,
+	&:after {
+	  position: absolute;
+	  content: '';
+	}
+	&:before {
+	  top: -10px;
+	  left: -8px;
+	  width: 130px;
+	  height: 10px;
+	  @include border(3px);
+	  background: #B5BFC4;
+	  border-radius: 4px;
+	}
+	&:after {
+	  top: -34px;
+	  left: 40px;
+	  border-bottom: 120px solid rgba(#FFF, 0.3);
+	  border-left: 40px solid transparent;
+	  transform: rotate(270deg);
+	}
+  }
+  
+  .table {
+	top: 146px;
+	left: 153px;
+	width: 277px;
+	height: 15px;
+	@include border(3px);
+	background: $wood;
+	div {
+	  position: absolute;
+	  background: #FCEFDA;
+	  width: 100px;
+	  height: 49px;
+	}
+	div:nth-child(1) {
+	  top: 18px;
+	  border-right: 3px solid $border;
+	}
+	div:nth-child(2) {
+	  top: 58px;
+	  border-right: 3px solid $border;
+	  box-shadow: inset 0 3px 0 $border;
+	}
+	div:nth-child(3) {
+	  top: 105px;
+	  box-shadow: inset 0 3px 0 $border;
+	  border-right: 3px solid $border;
+	  border-bottom: 3px solid $border;
+	}
+  }
+  
+  .line {
+	top: 186px;
+	left: 187px;
+	width: 40px;
+	height: 3px;
+	background: #B4ADA5;
+	box-shadow: 0 90px 0 #B4ADA5, 0 45px 0 #B4ADA5;
+  }
+  
+  .washer {
+	top: 164px;
+	left: 255px;
+	width: 175px;
+	height: 136px;
+	background: $oven;
+	@include border(3px);
+	
+	div:nth-child(1), div:nth-child(2) {
+	  position: absolute;
+	  top: 4px;
+	  left: 110px;
+	  width: 14px;
+	  height: 14px;
+	  background: #49BEAA;
+	  border-radius: 100%;
+	}
+	
+	div:nth-child(2){
+	  background: #EF767A;
+	  left: 130px;
+	}
+	
+	div:nth-child(3){
+	  position: absolute;
+	  top: 30px;
+	  left: 11px;
+	  width: 130px;
+	  height: 10px;
+	  background: $glass;
+	}
+  }
+
+  .pot {
+	width: 55px;
+	height: 40px;
+	background: #F4F4F4;
+	border-radius: 5px;
+	@include border(3px);
+	top: 87px;
+	left: 10px;
+	box-shadow: inset -5px 0 0 rgba(#000, 0.1);
+	
+	&:before, &:after{
+	  position: absolute;
+	  content:'';
+	  width: 7px;
+	  height: 10px;
+	  border-radius: 5px;
+	  @include border(3px);
+	  left: -13px;
+	  top: 5px;
+	}
+	
+	&:after{
+	  left: 55px;
+	}
+	
+  }
+  
+  .smoke {
+	top: -35px;
+	left: 20px;
+	width: 10px;
+	height: 25px;
+	border-radius: 100px 0 100px 0;
+	background: $glass;
+	box-shadow: 15px 5px 0 $glass;
+	animation: 3s steam infinite ease;
+  }
+  
+  @keyframes steam {
+	100%{ 
+	transform: translateY(-15px);
+	opacity: 0;}
+  }
+  
+  
+  @media (max-width: 800px) {
+	.container {
+	  transform: scale(0.7);
+	}
+  }
+
+  /*********************/
+   /** tuberia agua1****/
+   #action {
     margin: 0 auto;
-    width: 246px;
-    position: relative; /*posiciona container principal*/
-	right: 90px;
-	height: 300px;
-  	border: 2px solid black;
+    width: 282px;
+    position: relative;
+	right: 96px;
+    height: 300px;
+	height: 196px;
    
 }
 
 #keg {
     position: absolute;
     height: 200px;    
-    width: 50px;
+    width: 70px;
     background-color: #656D78;
     border-right: solid 20px #434A54;
-    top: 0px;
-	left: 0px;
+    bottom: 0;
+    left: 0px;
 }
 #pipe {
     position: absolute;
@@ -301,199 +463,552 @@
     }
 }
 
+.glass {    
+    position: absolute;
+    height: 100px;
+    width: 70px;
+    bottom: 0;
+ 	left:0px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 5px;
+    
+    animation: slide 5s ease forwards infinite;
+}
+
+
+.front-glass {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);   
+    border-radius: 5px;
+}
+
+.beer {
+    position: absolute;
+    bottom: 7px;
+    margin: 0 5px;
+    /*height: 80%;*/
+    width: 60px;
+    background-color: rgba(255, 206, 84, 0.8); /* #FFCE54*/
+    border-radius: 0 0 5px 5px;
+    border-top: solid 0px rgba(255, 206, 84, 0.8);
+    
+    animation: fillup 5s ease infinite;
+}
+.beer:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    /*height: 20px;*/
+    width: 100%;
+    background-color: white;
+    /*top: -20px;*/
+    border-radius: 5px 5px 0 0;
+    
+    animation: fillupfoam 5s linear infinite, wave 0.5s alternate infinite;
+}
+
+.handle {
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+.handle .top-right {
+    height: 20px;
+    width: 10px;
+    border-top: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-top-right-radius: 20px;
+}
+.handle .bottom-right {
+    height: 20px;
+    width: 10px;
+    border-bottom: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-bottom-right-radius: 20px;
+}
+
+@keyframes fillup {
+    0%, 20% { 
+        height: 0px; 
+        border-width: 0px;
+    }
+    40% {
+        height: 40px; 
+    }
+    80%, 100% { 
+        height: 80px; 
+        border-width: 5px;
+    }
+}
+@keyframes fillupfoam {
+    0%, 20% { 
+        top: 0px;
+        height: 0px; 
+    }
+    60%, 100% { 
+        top: -14px;
+        height: 15px; 
+    }
+}
+@keyframes wave {
+    from { 
+        transform: skew(0, -3deg);
+    }
+    to { 
+        transform: skew(0, 3deg);
+    }
+}
+
 
   /***************/
+  /***************/
   
-  .oven {
-	width: 150px;
-	height: 170px;
-	background: $oven;
-	top: 130px;
-	@include border(3px);
-  }
-  
-  .switch {
-	width: 150px;
-	height: 30px;
-	background: #B5BFC4;
-	border-bottom: 3px solid $border;
-	&:before,
-	&:after {
-	  position: absolute;
-	  content: '';
-	}
-	&:before {
-	  top: 7px;
-	  left: 10px;
-	  width: 15px;
-	  height: 15px;
-	  background: #6B7F89;
-	  border-radius: 100%;
-	  box-shadow: 60px 0 0 #6B7F89, 30px 0 0 #6B7F89
-	}
-  }
-  
-  .mid {
-	left: 15px;
-	width: 120px;
-	height: 70px;
-	background: #A7D0E5;
-	top: 60px;
-	&:before,
-	&:after {
-	  position: absolute;
-	  content: '';
-	}
-	&:before {
-	  top: -10px;
-	  left: -8px;
-	  width: 130px;
-	  height: 10px;
-	  @include border(3px);
-	  background: #B5BFC4;
-	  border-radius: 4px;
-	}
-	&:after {
-	  top: -34px;
-	  left: 40px;
-	  border-bottom: 120px solid rgba(#FFF, 0.3);
-	  border-left: 40px solid transparent;
-	  transform: rotate(270deg);
-	}
-  }
-  
-  .table {
-	top: 146px;
-	left: 153px;
-	width: 252px;
-	height: 15px;
-	@include border(3px);
-	background: $wood;
-	div {
-	  position: absolute;
-	  background: #FCEFDA;
-	  width: 100px;
-	  height: 49px;
-	}
-	div:nth-child(1) {
-	  top: 18px;
-	  border-right: 3px solid $border;
-	}
-	div:nth-child(2) {
-	  top: 58px;
-	  border-right: 3px solid $border;
-	  box-shadow: inset 0 3px 0 $border;
-	}
-	div:nth-child(3) {
-	  top: 105px;
-	  box-shadow: inset 0 3px 0 $border;
-	  border-right: 3px solid $border;
-	  border-bottom: 3px solid $border;
-	}
-  }
-  
-  .line {
-	top: 186px;
-	left: 187px;
-	width: 40px;
-	height: 3px;
-	background: #B4ADA5;
-	box-shadow: 0 90px 0 #B4ADA5, 0 45px 0 #B4ADA5;
-  }
-  
-  .washer {
-	top: 164px;
-	left: 255px;
-	width: 150px;
-	height: 136px;
-	background: $oven;
-	@include border(3px);
-	
-	div:nth-child(1), div:nth-child(2) {
-	  position: absolute;
-	  top: 4px;
-	  left: 110px;
-	  width: 14px;
-	  height: 14px;
-	  background: #49BEAA;
-	  border-radius: 100%;
-	}
-	
-	div:nth-child(2){
-	  background: #EF767A;
-	  left: 130px;
-	}
-	
-	div:nth-child(3){
-	  position: absolute;
-	  top: 30px;
-	  left: 11px;
-	  width: 130px;
-	  height: 10px;
-	  background: $glass;
-	}
-  }
-  /* 
-  .plate {
-	top: 120px;
-	left: 200px;
-	width: 60px;
-	height: 20px;
-	background: #F4F4F4;
-	border-radius: 0 0 100px 100px;
-	@include border(3px);
-	box-shadow: inset -5px 0 0 rgba(#000, 0.2);
-  }
-   */
-  
-  .pot {
-	width: 55px;
-	height: 40px;
-	background: #F4F4F4;
-	border-radius: 5px;
-	@include border(3px);
-	top: 87px;
-	left: 10px;
-	box-shadow: inset -5px 0 0 rgba(#000, 0.1);
-	
-	&:before, &:after{
-	  position: absolute;
-	  content:'';
-	  width: 7px;
-	  height: 10px;
-	  border-radius: 5px;
-	  @include border(3px);
-	  left: -13px;
-	  top: 5px;
-	}
-	
-	&:after{
-	  left: 55px;
-	}
-	
-  }
-  
-  .smoke {
-	top: -35px;
-	left: 20px;
-	width: 10px;
-	height: 25px;
-	border-radius: 100px 0 100px 0;
-	background: $glass;
-	box-shadow: 15px 5px 0 $glass;
-	animation: 3s steam infinite ease;
-  }
-  
-  @keyframes steam {
-	100%{ 
-	transform: translateY(-15px);
-	opacity: 0;}
-  }
-  
-  
-  @media (max-width: 800px) {
-	.container {
-	  transform: scale(0.7);
-	}
-  }
-  
+
+  /*********************/
+   /** tuberia agua2****/
+
+
+#keg2 {
+    position: absolute;
+    height: 200px;    
+    width: 70px;
+    background-color: #656D78;
+    border-right: solid 20px #434A54;
+    bottom: 0;
+    left: 94px;
+}
+#pipe2 {
+    position: absolute;
+    height: 30px;
+    width: 10px;
+    top: 30px;
+    left: 10px;
+    background-color: #CCD1D9;
+}
+
+#pipe2:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    height: 20px;
+    width: 30px;
+    top: -5px;
+    left: 5px;
+    background: linear-gradient(to bottom, #CCD1D9 50%, #AAB2BD 50%);
+    border-radius: 0 10px 10px 0;
+}
+
+#pipe2:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 10px;
+    background-color: rgba(255, 206, 84, 0.5);
+    
+    animation: flow 5s ease infinite;
+}
+
+@keyframes flow {
+    0%, 15% { 
+        top: 30px;
+        height: 0px;
+    }
+    20% { 
+         height: 125px;
+    }
+    40% {        
+        top: 30px;
+        height: 85px;
+    }
+    55% {
+        top: 30px;
+        height: 60px;
+    }
+    60%, 100% {
+        top: 70px;
+        height: 0px;
+    }
+}
+
+#pipe-front2 {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 25px;
+    left: 5px;
+    background-color: #F5F7FA;
+    border-radius: 10px;
+    border: solid 3px #CCD1D9;
+}
+
+#pipe-handle2 {
+    transform-origin: center bottom;
+    position: absolute;
+    width: 0;
+    height: 5px;
+    top: -20px;
+    left: 5px;
+    border-style: solid;
+    border-width: 50px 10px 0 10px;
+    border-color: black transparent transparent transparent;
+    
+    animation: handle 5s ease infinite;    
+}
+#pipe-handle2:before {
+    position: absolute;
+    top: -60px;
+    left: -10px;
+    display: block;
+    content: ' ';
+    width: 20px;
+    height: 10px;
+    background-color: #CCD1D9;
+    border-radius: 5px 5px 0 0;
+}
+#pipe-handle2:after {
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    display: block;
+    content: ' ';
+    width: 10px;
+    height: 20px;
+    background-color: #CCD1D9;
+}
+@keyframes handle {
+    0%, 10% { 
+       transform: rotate(0deg);
+    }
+    20%, 50% { 
+         transform: rotate(-90deg);
+    }
+    60%, 100% {
+        transform: rotate(0deg);
+    }
+}
+
+.glass2 {    
+    position: absolute;
+    height: 100px;
+    width: 70px;
+    bottom: 0;
+ 	left:96px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 5px;
+    
+    animation: slide 5s ease forwards infinite;
+}
+
+
+.front-glass2 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);   
+    border-radius: 5px;
+}
+
+.beer2 {
+    position: absolute;
+    bottom: 7px;
+    margin: 0 5px;
+    /*height: 80%;*/
+    width: 60px;
+    background-color: rgba(255, 206, 84, 0.8); /* #FFCE54*/
+    border-radius: 0 0 5px 5px;
+    border-top: solid 0px rgba(255, 206, 84, 0.8);
+    
+    animation: fillup 5s ease infinite;
+}
+.beer2:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    /*height: 20px;*/
+    width: 100%;
+    background-color: white;
+    /*top: -20px;*/
+    border-radius: 5px 5px 0 0;
+    
+    animation: fillupfoam 5s linear infinite, wave 0.5s alternate infinite;
+}
+
+.handle2 {
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+.handle2 .top-right2 {
+    height: 20px;
+    width: 10px;
+    border-top: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-top-right-radius: 20px;
+}
+.handle2 .bottom-right2 {
+    height: 20px;
+    width: 10px;
+    border-bottom: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-bottom-right-radius: 20px;
+}
+
+@keyframes fillup {
+    0%, 20% { 
+        height: 0px; 
+        border-width: 0px;
+    }
+    40% {
+        height: 40px; 
+    }
+    80%, 100% { 
+        height: 80px; 
+        border-width: 5px;
+    }
+}
+@keyframes fillupfoam {
+    0%, 20% { 
+        top: 0px;
+        height: 0px; 
+    }
+    60%, 100% { 
+        top: -14px;
+        height: 15px; 
+    }
+}
+@keyframes wave {
+    from { 
+        transform: skew(0, -3deg);
+    }
+    to { 
+        transform: skew(0, 3deg);
+    }
+}
+
+
+  /**************************/
+  /*************************/
+   /** tuberia agua # 3****/
+
+
+#keg3 {
+    position: absolute;
+    height: 200px;    
+    width: 70px;
+    background-color: #656D78;
+    border-right: solid 20px #434A54;
+    bottom: 0;
+    left: 190px;
+}
+#pipe3 {
+    position: absolute;
+    height: 30px;
+    width: 10px;
+    top: 30px;
+    left: 10px;
+    background-color: #CCD1D9;
+}
+
+#pipe3:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    height: 20px;
+    width: 30px;
+    top: -5px;
+    left: 5px;
+    background: linear-gradient(to bottom, #CCD1D9 50%, #AAB2BD 50%);
+    border-radius: 0 10px 10px 0;
+}
+
+#pipe3:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 10px;
+    background-color: rgba(255, 206, 84, 0.5);
+    
+    animation: flow 5s ease infinite;
+}
+
+@keyframes flow {
+    0%, 15% { 
+        top: 30px;
+        height: 0px;
+    }
+    20% { 
+         height: 125px;
+    }
+    40% {        
+        top: 30px;
+        height: 85px;
+    }
+    55% {
+        top: 30px;
+        height: 60px;
+    }
+    60%, 100% {
+        top: 70px;
+        height: 0px;
+    }
+}
+
+#pipe-front3 {
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: 25px;
+    left: 5px;
+    background-color: #F5F7FA;
+    border-radius: 10px;
+    border: solid 3px #CCD1D9;
+}
+
+#pipe-handle3 {
+    transform-origin: center bottom;
+    position: absolute;
+    width: 0;
+    height: 5px;
+    top: -20px;
+    left: 5px;
+    border-style: solid;
+    border-width: 50px 10px 0 10px;
+    border-color: black transparent transparent transparent;
+    
+    animation: handle 5s ease infinite;    
+}
+#pipe-handle3:before {
+    position: absolute;
+    top: -60px;
+    left: -10px;
+    display: block;
+    content: ' ';
+    width: 20px;
+    height: 10px;
+    background-color: #CCD1D9;
+    border-radius: 5px 5px 0 0;
+}
+#pipe-handle3:after {
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    display: block;
+    content: ' ';
+    width: 10px;
+    height: 20px;
+    background-color: #CCD1D9;
+}
+@keyframes handle {
+    0%, 10% { 
+       transform: rotate(0deg);
+    }
+    20%, 50% { 
+         transform: rotate(-90deg);
+    }
+    60%, 100% {
+        transform: rotate(0deg);
+    }
+}
+
+.glass3 {    
+    position: absolute;
+    height: 100px;
+    width: 70px;
+    bottom: 0;
+ 	left:191px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 5px;
+    
+    animation: slide 5s ease forwards infinite;
+}
+
+
+.front-glass3 {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);   
+    border-radius: 5px;
+}
+
+.beer3 {
+    position: absolute;
+    bottom: 7px;
+    margin: 0 5px;
+    /*height: 80%;*/
+    width: 60px;
+    background-color: rgba(255, 206, 84, 0.8); /* #FFCE54*/
+    border-radius: 0 0 5px 5px;
+    border-top: solid 0px rgba(255, 206, 84, 0.8);
+    
+    animation: fillup 5s ease infinite;
+}
+.beer3:after {
+    position: absolute;
+    display: block;
+    content: " ";
+    /*height: 20px;*/
+    width: 100%;
+    background-color: white;
+    /*top: -20px;*/
+    border-radius: 5px 5px 0 0;
+    
+    animation: fillupfoam 5s linear infinite, wave 0.5s alternate infinite;
+}
+
+.handle3 {
+    position: absolute;
+    right: -20px;
+    top: 20px;
+}
+.handle3 .top-right3 {
+    height: 20px;
+    width: 10px;
+    border-top: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-top-right-radius: 20px;
+}
+.handle3 .bottom-right3 {
+    height: 20px;
+    width: 10px;
+    border-bottom: solid 10px rgba(255, 255, 255, 0.4);
+    border-right: solid 10px rgba(255, 255, 255, 0.4);
+    border-bottom-right-radius: 20px;
+}
+
+@keyframes fillup {
+    0%, 20% { 
+        height: 0px; 
+        border-width: 0px;
+    }
+    40% {
+        height: 40px; 
+    }
+    80%, 100% { 
+        height: 80px; 
+        border-width: 5px;
+    }
+}
+@keyframes fillupfoam {
+    0%, 20% { 
+        top: 0px;
+        height: 0px; 
+    }
+    60%, 100% { 
+        top: -14px;
+        height: 15px; 
+    }
+}
+@keyframes wave {
+    from { 
+        transform: skew(0, -3deg);
+    }
+    to { 
+        transform: skew(0, 3deg);
+    }
+}
+
+
+  /***************/
