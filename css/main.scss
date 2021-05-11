@@ -1,3 +1,14 @@
+/*******************/
+/**** header********/
+button{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*******kichen*************/
+/*******kichen*************/
+
 @mixin border($b) {
 	border: $b solid $border;
   }
@@ -34,6 +45,7 @@
 	right: 0;
 	width: 400px;
 	height: 200px;
+    border: 2px solid black;
   }
   
   .cabinet {
@@ -472,7 +484,7 @@
     background-color: rgba(255, 255, 255, 0.0);
     border-radius: 5px;
     
-    animation: slide 5s ease forwards infinite;
+    animation: slide 5s ease forwards;
 }
 
 
@@ -482,6 +494,7 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.3);   
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .beer {
@@ -494,7 +507,7 @@
     border-radius: 0 0 5px 5px;
     border-top: solid 0px rgba(255, 206, 84, 0.8);
     
-    animation: fillup 5s ease infinite;
+    animation: fillup 5s ease forwards;
 }
 .beer:after {
     position: absolute;
